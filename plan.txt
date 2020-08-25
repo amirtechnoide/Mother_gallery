@@ -1,0 +1,5 @@
+-buid a gallery for a client
+ *home page
+ *contact page
+ *photo
+ *about page
