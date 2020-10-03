@@ -5,7 +5,12 @@
   <title>Djakou-Kassi-Nathalie</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script type="module">
+    import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 
+    const el = document.createElement('pwa-update');
+    document.body.appendChild(el);
+  </script>
   <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
 
@@ -42,49 +47,19 @@
       <div class="site-mobile-menu-body"></div>
     </div>
 
-    <!-- <header class="header-bar d-flex d-lg-flex align-items-center" data-aos="fade-down">
-      <div class="site-logo">
-        <a href="index.html">
-          <h1>DKN</h1>
-        </a>
-      </div>
-
-      <div class="d-inline-block d-xl-block ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#"
-          class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span> <span
-            style="position: relative;top: -4px; text-transform: uppercase;">Menu</span></a></div>
-
-      <div class="main-menu d-none">
-        <ul class="js-clone-nav">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="photos.html">Photos</a></li>
-          <li><a href="bio.html">About Me</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <ul class="social js-clone-nav">
-          <li><a href="#"><span class="icon-facebook"></span></a></li>
-          <li><a href="#"><span class="icon-twitter"></span></a></li>
-          <li><a href="#"><span class="icon-instagram"></span></a></li>
-        </ul>
-      </div>
-    </header> -->
+    
     <header>
       <nav class="navbar navbar-expand-lg navbar-light">
         <!-- <a class="navbar-brand" href="#"><img src="images/logo.png" alt="" width="200px" height="70px"></a> -->
-        <a class="navbar-brand" href="#"><h3>DKN Gallery</h3></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">
+          <h3>DKN Gallery</h3>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
-            <!-- <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li> -->
           </ul>
           <div class="navbar-text">
             <ul class="navbar-nav mr-auto">
@@ -110,7 +85,7 @@
     </header>
 
 
-    
+
     <!-- -----2nd header------ -->
 
 
@@ -192,7 +167,7 @@
           </div>
         </div>
 
-        <div class="swiper-slide cover"  style="background-image: url('images/img_7.jpg');">
+        <div class="swiper-slide cover" style="background-image: url('images/img_7.jpg');">
           <a href="images/img_7.jpg" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
           <div class="img-info">
             <span class="btn-toggle-expand"><span class="icon-call_made"></span></span>
@@ -338,7 +313,7 @@
                 laboriosam voluptatum laudantium.</p>
             </div>
           </div>
-        </div> 
+        </div>
 
         <div class="swiper-slide cover" style="background-image: url('images/img_9.jpg');">
           <a href="images/img_9.jpg" data-fancybox="gallery" class="zoom"><span class="icon-search"></span></a>
@@ -412,9 +387,14 @@
   <script src="js/swiper.min.js"></script>
   <script src="js/jquery.scrollbar.js"></script>
   <script src="js/main.js"></script>
-
-
-
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(function() {
+              console.log('Service Worker Registered');
+        });
+    }
+  </script>
 </body>
 
 </html>
